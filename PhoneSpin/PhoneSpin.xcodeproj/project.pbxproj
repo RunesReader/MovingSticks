@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		7830E5C21C0330A40096C6B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5C11C0330A40096C6B7 /* main.m */; };
-		7830E5C51C0330A40096C6B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5C41C0330A40096C6B7 /* AppDelegate.m */; };
 		7830E5C81C0330A40096C6B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5C71C0330A40096C6B7 /* ViewController.m */; };
 		7830E5DA1C035ACA0096C6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5D91C035ACA0096C6B7 /* Assets.xcassets */; };
 		7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5DC1C035B020096C6B7 /* LaunchScreen.storyboard */; };
 		7830E5E11C035B020096C6B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5DE1C035B020096C6B7 /* Main.storyboard */; };
+		7830E5ED1C039C7C0096C6B7 /* ARRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5EB1C039C7C0096C6B7 /* ARRAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7830E5BD1C0330A40096C6B7 /* PhoneSpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneSpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7830E5C11C0330A40096C6B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7830E5C31C0330A40096C6B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7830E5C41C0330A40096C6B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7830E5C61C0330A40096C6B7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7830E5C71C0330A40096C6B7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7830E5D11C0330A40096C6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7830E5D91C035ACA0096C6B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7830E5DD1C035B020096C6B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7830E5DF1C035B020096C6B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		7830E5EB1C039C7C0096C6B7 /* ARRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRAppDelegate.m; sourceTree = "<group>"; };
+		7830E5EC1C039C7C0096C6B7 /* ARRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRAppDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 		7830E5BF1C0330A40096C6B7 /* PhoneSpin */ = {
 			isa = PBXGroup;
 			children = (
-				7830E5C31C0330A40096C6B7 /* AppDelegate.h */,
-				7830E5C41C0330A40096C6B7 /* AppDelegate.m */,
+				7830E5EC1C039C7C0096C6B7 /* ARRAppDelegate.h */,
+				7830E5EB1C039C7C0096C6B7 /* ARRAppDelegate.m */,
 				7830E5C61C0330A40096C6B7 /* ViewController.h */,
 				7830E5C71C0330A40096C6B7 /* ViewController.m */,
 				7830E5D11C0330A40096C6B7 /* Info.plist */,
@@ -110,6 +110,8 @@
 		7830E5E21C035BC20096C6B7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7830E5E71C0381770096C6B7 /* ViewControllers */,
+				7830E5E61C0381600096C6B7 /* Views */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -131,8 +133,46 @@
 		7830E5E51C035C1B0096C6B7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7830E5EA1C0382220096C6B7 /* Categories */,
+				7830E5E91C0382020096C6B7 /* Classes */,
+				7830E5E81C0381EF0096C6B7 /* Macros */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		7830E5E61C0381600096C6B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7830E5E71C0381770096C6B7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7830E5E81C0381EF0096C6B7 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Macros;
+			sourceTree = "<group>";
+		};
+		7830E5E91C0382020096C6B7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7830E5EA1C0382220096C6B7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,8 +247,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7830E5C81C0330A40096C6B7 /* ViewController.m in Sources */,
-				7830E5C51C0330A40096C6B7 /* AppDelegate.m in Sources */,
 				7830E5C21C0330A40096C6B7 /* main.m in Sources */,
+				7830E5ED1C039C7C0096C6B7 /* ARRAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -307,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

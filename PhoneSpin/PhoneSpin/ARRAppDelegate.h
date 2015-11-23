@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  ARRAppDelegate.h
 //  PhoneSpin
 //
 //  Created by Igor Arsenkin on 23.11.15.
@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface ARRAppDelegate : UIResponder <UIApplicationDelegate>
+@property (nonatomic, strong) UIWindow *window;
 
 @end
-
