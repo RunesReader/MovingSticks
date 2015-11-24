@@ -10,7 +10,6 @@
 		7830E5C21C0330A40096C6B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5C11C0330A40096C6B7 /* main.m */; };
 		7830E5DA1C035ACA0096C6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5D91C035ACA0096C6B7 /* Assets.xcassets */; };
 		7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5DC1C035B020096C6B7 /* LaunchScreen.storyboard */; };
-		7830E5E11C035B020096C6B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5DE1C035B020096C6B7 /* Main.storyboard */; };
 		7830E5ED1C039C7C0096C6B7 /* ARRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5EB1C039C7C0096C6B7 /* ARRAppDelegate.m */; };
 		7830E5F31C0467E00096C6B7 /* ARRObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5F21C0467E00096C6B7 /* ARRObservableObject.m */; };
 		7830E5FA1C0468C30096C6B7 /* UIWindow+ARRWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5F61C0468C30096C6B7 /* UIWindow+ARRWindow.m */; };
@@ -23,7 +22,6 @@
 		7830E5D11C0330A40096C6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7830E5D91C035ACA0096C6B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7830E5DD1C035B020096C6B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7830E5DF1C035B020096C6B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		7830E5EB1C039C7C0096C6B7 /* ARRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRAppDelegate.m; sourceTree = "<group>"; };
 		7830E5EC1C039C7C0096C6B7 /* ARRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRAppDelegate.h; sourceTree = "<group>"; };
 		7830E5EF1C0467820096C6B7 /* ARRUniversalMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRUniversalMacros.h; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				7830E5DC1C035B020096C6B7 /* LaunchScreen.storyboard */,
-				7830E5DE1C035B020096C6B7 /* Main.storyboard */,
 			);
 			path = Base.lproj;
 			sourceTree = "<group>";
@@ -269,7 +266,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7830E5E11C035B020096C6B7 /* Main.storyboard in Resources */,
 				7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */,
 				7830E5DA1C035ACA0096C6B7 /* Assets.xcassets in Resources */,
 			);
@@ -299,14 +295,6 @@
 				7830E5DD1C035B020096C6B7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		7830E5DE1C035B020096C6B7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7830E5DF1C035B020096C6B7 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
