@@ -15,6 +15,7 @@
 		7830E5FA1C0468C30096C6B7 /* UIWindow+ARRWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5F61C0468C30096C6B7 /* UIWindow+ARRWindow.m */; };
 		7830E5FB1C0468C30096C6B7 /* UIViewController+ARRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5F91C0468C30096C6B7 /* UIViewController+ARRExtensions.m */; };
 		7830E5FF1C047CC40096C6B7 /* ARRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5FE1C047CC40096C6B7 /* ARRViewController.m */; };
+		7830E6031C051CA30096C6B7 /* ARRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E6021C051CA30096C6B7 /* ARRView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		7830E5F91C0468C30096C6B7 /* UIViewController+ARRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ARRExtensions.m"; sourceTree = "<group>"; };
 		7830E5FD1C047CC40096C6B7 /* ARRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRViewController.h; sourceTree = "<group>"; };
 		7830E5FE1C047CC40096C6B7 /* ARRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRViewController.m; sourceTree = "<group>"; };
+		7830E6011C051CA30096C6B7 /* ARRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRView.h; sourceTree = "<group>"; };
+		7830E6021C051CA30096C6B7 /* ARRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,7 @@
 		7830E5E61C0381600096C6B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7830E6001C051C350096C6B7 /* ARRView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +223,15 @@
 				7830E5FE1C047CC40096C6B7 /* ARRViewController.m */,
 			);
 			path = ARRViewController;
+			sourceTree = "<group>";
+		};
+		7830E6001C051C350096C6B7 /* ARRView */ = {
+			isa = PBXGroup;
+			children = (
+				7830E6011C051CA30096C6B7 /* ARRView.h */,
+				7830E6021C051CA30096C6B7 /* ARRView.m */,
+			);
+			path = ARRView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +306,7 @@
 			files = (
 				7830E5FF1C047CC40096C6B7 /* ARRViewController.m in Sources */,
 				7830E5C21C0330A40096C6B7 /* main.m in Sources */,
+				7830E6031C051CA30096C6B7 /* ARRView.m in Sources */,
 				7830E5FB1C0468C30096C6B7 /* UIViewController+ARRExtensions.m in Sources */,
 				7830E5FA1C0468C30096C6B7 /* UIWindow+ARRWindow.m in Sources */,
 				7830E5F31C0467E00096C6B7 /* ARRObservableObject.m in Sources */,
