@@ -8,10 +8,6 @@
 
 #import "ARRAppDelegate.h"
 
-@interface ARRAppDelegate ()
-
-@end
-
 @implementation ARRAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

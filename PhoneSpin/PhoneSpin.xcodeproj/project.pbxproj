@@ -8,24 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		7830E5C21C0330A40096C6B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5C11C0330A40096C6B7 /* main.m */; };
-		7830E5C81C0330A40096C6B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5C71C0330A40096C6B7 /* ViewController.m */; };
 		7830E5DA1C035ACA0096C6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5D91C035ACA0096C6B7 /* Assets.xcassets */; };
 		7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5DC1C035B020096C6B7 /* LaunchScreen.storyboard */; };
 		7830E5E11C035B020096C6B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5DE1C035B020096C6B7 /* Main.storyboard */; };
 		7830E5ED1C039C7C0096C6B7 /* ARRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5EB1C039C7C0096C6B7 /* ARRAppDelegate.m */; };
+		7830E5F31C0467E00096C6B7 /* ARRObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5F21C0467E00096C6B7 /* ARRObservableObject.m */; };
+		7830E5FA1C0468C30096C6B7 /* UIWindow+ARRWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5F61C0468C30096C6B7 /* UIWindow+ARRWindow.m */; };
+		7830E5FB1C0468C30096C6B7 /* UIViewController+ARRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5F91C0468C30096C6B7 /* UIViewController+ARRExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7830E5BD1C0330A40096C6B7 /* PhoneSpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneSpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7830E5C11C0330A40096C6B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7830E5C61C0330A40096C6B7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7830E5C71C0330A40096C6B7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7830E5D11C0330A40096C6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7830E5D91C035ACA0096C6B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7830E5DD1C035B020096C6B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7830E5DF1C035B020096C6B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		7830E5EB1C039C7C0096C6B7 /* ARRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRAppDelegate.m; sourceTree = "<group>"; };
 		7830E5EC1C039C7C0096C6B7 /* ARRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRAppDelegate.h; sourceTree = "<group>"; };
+		7830E5EF1C0467820096C6B7 /* ARRUniversalMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRUniversalMacros.h; sourceTree = "<group>"; };
+		7830E5F11C0467E00096C6B7 /* ARRObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRObservableObject.h; sourceTree = "<group>"; };
+		7830E5F21C0467E00096C6B7 /* ARRObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRObservableObject.m; sourceTree = "<group>"; };
+		7830E5F51C0468C30096C6B7 /* UIWindow+ARRWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+ARRWindow.h"; sourceTree = "<group>"; };
+		7830E5F61C0468C30096C6B7 /* UIWindow+ARRWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+ARRWindow.m"; sourceTree = "<group>"; };
+		7830E5F81C0468C30096C6B7 /* UIViewController+ARRExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ARRExtensions.h"; sourceTree = "<group>"; };
+		7830E5F91C0468C30096C6B7 /* UIViewController+ARRExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ARRExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +69,6 @@
 			children = (
 				7830E5EC1C039C7C0096C6B7 /* ARRAppDelegate.h */,
 				7830E5EB1C039C7C0096C6B7 /* ARRAppDelegate.m */,
-				7830E5C61C0330A40096C6B7 /* ViewController.h */,
-				7830E5C71C0330A40096C6B7 /* ViewController.m */,
 				7830E5D11C0330A40096C6B7 /* Info.plist */,
 				7830E5C01C0330A40096C6B7 /* Supporting Files */,
 			);
@@ -157,6 +162,7 @@
 		7830E5E81C0381EF0096C6B7 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
+				7830E5EF1C0467820096C6B7 /* ARRUniversalMacros.h */,
 			);
 			path = Macros;
 			sourceTree = "<group>";
@@ -164,6 +170,7 @@
 		7830E5E91C0382020096C6B7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7830E5F01C0467E00096C6B7 /* ARRObservableObject */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -171,8 +178,37 @@
 		7830E5EA1C0382220096C6B7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				7830E5F41C0468C30096C6B7 /* UIWindow+ARRWindow */,
+				7830E5F71C0468C30096C6B7 /* UIViewController+ARRTrollsViewController */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		7830E5F01C0467E00096C6B7 /* ARRObservableObject */ = {
+			isa = PBXGroup;
+			children = (
+				7830E5F11C0467E00096C6B7 /* ARRObservableObject.h */,
+				7830E5F21C0467E00096C6B7 /* ARRObservableObject.m */,
+			);
+			path = ARRObservableObject;
+			sourceTree = "<group>";
+		};
+		7830E5F41C0468C30096C6B7 /* UIWindow+ARRWindow */ = {
+			isa = PBXGroup;
+			children = (
+				7830E5F51C0468C30096C6B7 /* UIWindow+ARRWindow.h */,
+				7830E5F61C0468C30096C6B7 /* UIWindow+ARRWindow.m */,
+			);
+			path = "UIWindow+ARRWindow";
+			sourceTree = "<group>";
+		};
+		7830E5F71C0468C30096C6B7 /* UIViewController+ARRTrollsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7830E5F81C0468C30096C6B7 /* UIViewController+ARRExtensions.h */,
+				7830E5F91C0468C30096C6B7 /* UIViewController+ARRExtensions.m */,
+			);
+			path = "UIViewController+ARRTrollsViewController";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7830E5C81C0330A40096C6B7 /* ViewController.m in Sources */,
 				7830E5C21C0330A40096C6B7 /* main.m in Sources */,
+				7830E5FB1C0468C30096C6B7 /* UIViewController+ARRExtensions.m in Sources */,
+				7830E5FA1C0468C30096C6B7 /* UIWindow+ARRWindow.m in Sources */,
+				7830E5F31C0467E00096C6B7 /* ARRObservableObject.m in Sources */,
 				7830E5ED1C039C7C0096C6B7 /* ARRAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
