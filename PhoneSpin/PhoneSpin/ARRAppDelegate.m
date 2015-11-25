@@ -8,9 +8,20 @@
 
 #import "ARRAppDelegate.h"
 
+#import "ARRStartViewController.h"
+
+#import "UIWindow+ARRWindow.h"
+#import "UIViewController+ARRExtensions.h"
+
 @implementation ARRAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    UIWindow *window = [UIWindow window];
+    self.window = window;
+    
+    ARRStartViewController *startController = [ARRStartViewController controller];
+    window.rootViewController = startController;
+    [window makeKeyAndVisible];
     
     return YES;
 }
