@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface ARRContentModel : NSObject
+@property (nonatomic, readonly) NSString    *openingText;
+@property (nonatomic, readonly) NSString    *achievmentText;
+@property (nonatomic, readonly) NSString    *spinsText;
 
 @end
