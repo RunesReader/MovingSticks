@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78097C931C060FDD00848BE3 /* ARRStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78097C911C060FDD00848BE3 /* ARRStartViewController.m */; };
+		78097C941C060FDD00848BE3 /* ARRStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78097C921C060FDD00848BE3 /* ARRStartViewController.xib */; };
+		78097C971C06105100848BE3 /* ARRStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78097C961C06105100848BE3 /* ARRStartView.m */; };
 		7830E5C21C0330A40096C6B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5C11C0330A40096C6B7 /* main.m */; };
 		7830E5DA1C035ACA0096C6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5D91C035ACA0096C6B7 /* Assets.xcassets */; };
 		7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5DC1C035B020096C6B7 /* LaunchScreen.storyboard */; };
@@ -19,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78097C901C060FDD00848BE3 /* ARRStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRStartViewController.h; sourceTree = "<group>"; };
+		78097C911C060FDD00848BE3 /* ARRStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRStartViewController.m; sourceTree = "<group>"; };
+		78097C921C060FDD00848BE3 /* ARRStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARRStartViewController.xib; sourceTree = "<group>"; };
+		78097C951C06105100848BE3 /* ARRStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRStartView.h; sourceTree = "<group>"; };
+		78097C961C06105100848BE3 /* ARRStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRStartView.m; sourceTree = "<group>"; };
 		7830E5BD1C0330A40096C6B7 /* PhoneSpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneSpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7830E5C11C0330A40096C6B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7830E5D11C0330A40096C6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +58,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78097C8F1C060F8100848BE3 /* ARRStartViewController */ = {
+			isa = PBXGroup;
+			children = (
+				78097C901C060FDD00848BE3 /* ARRStartViewController.h */,
+				78097C911C060FDD00848BE3 /* ARRStartViewController.m */,
+				78097C921C060FDD00848BE3 /* ARRStartViewController.xib */,
+				78097C951C06105100848BE3 /* ARRStartView.h */,
+				78097C961C06105100848BE3 /* ARRStartView.m */,
+			);
+			path = ARRStartViewController;
+			sourceTree = "<group>";
+		};
 		7830E5B41C0330A40096C6B7 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +179,7 @@
 		7830E5E71C0381770096C6B7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				78097C8F1C060F8100848BE3 /* ARRStartViewController */,
 				7830E5FC1C047C350096C6B7 /* ARRViewController */,
 			);
 			path = ViewControllers;
@@ -292,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78097C941C060FDD00848BE3 /* ARRStartViewController.xib in Resources */,
 				7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */,
 				7830E5DA1C035ACA0096C6B7 /* Assets.xcassets in Resources */,
 			);
@@ -308,7 +330,9 @@
 				7830E5C21C0330A40096C6B7 /* main.m in Sources */,
 				7830E6031C051CA30096C6B7 /* ARRView.m in Sources */,
 				7830E5FB1C0468C30096C6B7 /* UIViewController+ARRExtensions.m in Sources */,
+				78097C971C06105100848BE3 /* ARRStartView.m in Sources */,
 				7830E5FA1C0468C30096C6B7 /* UIWindow+ARRWindow.m in Sources */,
+				78097C931C060FDD00848BE3 /* ARRStartViewController.m in Sources */,
 				7830E5F31C0467E00096C6B7 /* ARRObservableObject.m in Sources */,
 				7830E5ED1C039C7C0096C6B7 /* ARRAppDelegate.m in Sources */,
 			);
@@ -449,6 +473,7 @@
 				7830E5D61C0330A40096C6B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
