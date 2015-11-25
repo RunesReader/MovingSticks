@@ -15,13 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qt-9g-Weo">
-                    <rect key="frame" x="279" y="8" width="42" height="21"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGo-pM-y98">
+                    <rect key="frame" x="180" y="67" width="240" height="128"/>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhx-rp-Fnf">
                     <rect key="frame" x="279" y="399" width="42" height="21"/>
                     <animations/>
@@ -50,13 +47,25 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGo-pM-y98">
-                    <rect key="frame" x="180" y="67" width="240" height="128"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qt-9g-Weo">
+                    <rect key="frame" x="279" y="8" width="42" height="21"/>
                     <animations/>
-                </imageView>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="achievmentText" destination="Yhx-rp-Fnf" id="3jM-Wa-NUa"/>
+                <outlet property="image" destination="lGo-pM-y98" id="60z-D1-3VZ"/>
+                <outlet property="maxAchievment" destination="Ho6-mO-uhB" id="bhs-Up-xO6"/>
+                <outlet property="nameOfAchievment" destination="rCx-vE-nQe" id="Y5e-3c-cxU"/>
+                <outlet property="openingText" destination="7qt-9g-Weo" id="TuR-If-0CP"/>
+                <outlet property="spinsText" destination="u3I-qn-j3P" id="G2d-Jt-PZv"/>
+            </connections>
+            <point key="canvasLocation" x="299" y="348"/>
         </view>
     </objects>
 </document>
