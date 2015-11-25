@@ -10,6 +10,8 @@
 		78097C931C060FDD00848BE3 /* ARRStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78097C911C060FDD00848BE3 /* ARRStartViewController.m */; };
 		78097C941C060FDD00848BE3 /* ARRStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78097C921C060FDD00848BE3 /* ARRStartViewController.xib */; };
 		78097C971C06105100848BE3 /* ARRStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78097C961C06105100848BE3 /* ARRStartView.m */; };
+		78097C9B1C06427200848BE3 /* ARRScoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78097C9A1C06427200848BE3 /* ARRScoreModel.m */; };
+		78097C9F1C0642A300848BE3 /* ARRContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78097C9E1C0642A300848BE3 /* ARRContentModel.m */; };
 		7830E5C21C0330A40096C6B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7830E5C11C0330A40096C6B7 /* main.m */; };
 		7830E5DA1C035ACA0096C6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5D91C035ACA0096C6B7 /* Assets.xcassets */; };
 		7830E5E01C035B020096C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7830E5DC1C035B020096C6B7 /* LaunchScreen.storyboard */; };
@@ -27,6 +29,10 @@
 		78097C921C060FDD00848BE3 /* ARRStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARRStartViewController.xib; sourceTree = "<group>"; };
 		78097C951C06105100848BE3 /* ARRStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRStartView.h; sourceTree = "<group>"; };
 		78097C961C06105100848BE3 /* ARRStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRStartView.m; sourceTree = "<group>"; };
+		78097C991C06427200848BE3 /* ARRScoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRScoreModel.h; sourceTree = "<group>"; };
+		78097C9A1C06427200848BE3 /* ARRScoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRScoreModel.m; sourceTree = "<group>"; };
+		78097C9D1C0642A300848BE3 /* ARRContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRContentModel.h; sourceTree = "<group>"; };
+		78097C9E1C0642A300848BE3 /* ARRContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRContentModel.m; sourceTree = "<group>"; };
 		7830E5BD1C0330A40096C6B7 /* PhoneSpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneSpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7830E5C11C0330A40096C6B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7830E5D11C0330A40096C6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +74,24 @@
 				78097C961C06105100848BE3 /* ARRStartView.m */,
 			);
 			path = ARRStartViewController;
+			sourceTree = "<group>";
+		};
+		78097C981C06422700848BE3 /* ARRScoreModel */ = {
+			isa = PBXGroup;
+			children = (
+				78097C991C06427200848BE3 /* ARRScoreModel.h */,
+				78097C9A1C06427200848BE3 /* ARRScoreModel.m */,
+			);
+			path = ARRScoreModel;
+			sourceTree = "<group>";
+		};
+		78097C9C1C06428300848BE3 /* ARRContentModel */ = {
+			isa = PBXGroup;
+			children = (
+				78097C9D1C0642A300848BE3 /* ARRContentModel.h */,
+				78097C9E1C0642A300848BE3 /* ARRContentModel.m */,
+			);
+			path = ARRContentModel;
 			sourceTree = "<group>";
 		};
 		7830E5B41C0330A40096C6B7 = {
@@ -154,6 +178,8 @@
 		7830E5E41C035C0A0096C6B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				78097C9C1C06428300848BE3 /* ARRContentModel */,
+				78097C981C06422700848BE3 /* ARRScoreModel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78097C9B1C06427200848BE3 /* ARRScoreModel.m in Sources */,
 				7830E5FF1C047CC40096C6B7 /* ARRViewController.m in Sources */,
 				7830E5C21C0330A40096C6B7 /* main.m in Sources */,
 				7830E6031C051CA30096C6B7 /* ARRView.m in Sources */,
@@ -333,6 +360,7 @@
 				78097C971C06105100848BE3 /* ARRStartView.m in Sources */,
 				7830E5FA1C0468C30096C6B7 /* UIWindow+ARRWindow.m in Sources */,
 				78097C931C060FDD00848BE3 /* ARRStartViewController.m in Sources */,
+				78097C9F1C0642A300848BE3 /* ARRContentModel.m in Sources */,
 				7830E5F31C0467E00096C6B7 /* ARRObservableObject.m in Sources */,
 				7830E5ED1C039C7C0096C6B7 /* ARRAppDelegate.m in Sources */,
 			);
