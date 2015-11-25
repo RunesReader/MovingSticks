@@ -8,9 +8,11 @@
 
 #import "ARRStartViewController.h"
 
-@interface ARRStartViewController ()
+#import "ARRStartView.h"
 
-@end
+#import "ARRUniversalMacros.h"
+
+ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView)
 
 @implementation ARRStartViewController
 
