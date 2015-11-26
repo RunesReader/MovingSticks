@@ -11,6 +11,7 @@
 static NSString * const kARROpeningText = @"Enfold firmly yours phone";
 static NSString * const kARRAchievmentText = @"Your MAX achievment was:";
 static NSString * const kARRSpinsText = @"spins";
+static NSString * const kARRImageName = @"iPhone";
 
 @implementation ARRContentModel
 
@@ -27,6 +28,10 @@ static NSString * const kARRSpinsText = @"spins";
 
 - (NSString *)spinsText {
     return kARRSpinsText;
+}
+
+- (UIImage *)image {
+    return [UIImage imageNamed:kARRImageName];
 }
 
 @end

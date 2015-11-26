@@ -14,6 +14,6 @@
 @property (nonatomic, weak) IBOutlet UILabel        *maxAchievment;
 @property (nonatomic, weak) IBOutlet UILabel        *spinsText;
 @property (nonatomic, weak) IBOutlet UILabel        *nameOfAchievment;
-@property (nonatomic, weak) IBOutlet UIImageView    *image;
+@property (nonatomic, weak) IBOutlet UIImageView    *contentImageView;
 
 @end
