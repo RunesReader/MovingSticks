@@ -45,11 +45,15 @@
 #pragma mark Private Accessors
 
 - (void)setSubviewsVisible:(BOOL)subviewsVisible {
-    _subviewsVisible = subviewsVisible;
-    
-    NSArray *contentSubviews = self.contentsSubviews;
-    for (UIView *view in contentSubviews) {
-        view.hidden = !_subviewsVisible;
+    if (_subviewsVisible != subviewsVisible) {
+        _subviewsVisible = subviewsVisible;
+        
+        NSArray *contentSubviews = self.contentsSubviews;
+        for (UIView *view in contentSubviews) {
+            view.hidden = !_subviewsVisible;
+        }
+        
+        self.countDownText.hidden = _subviewsVisible;
     }
 }
 
@@ -61,6 +65,10 @@
     self.achievmentText.text = model.achievmentText;
     self.spinsText.text = model.spinsText;
     self.contentImageView.image = model.image;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.subviewsVisible = NO;
 }
 
 @end

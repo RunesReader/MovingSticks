@@ -1,13 +1,21 @@
 //
 //  ARRScoreModel.h
-//  PhoneSpin
+//  MovingSticks
 //
-//  Created by Igor Arsenkin on 25.11.15.
-//  Copyright © 2015 Igor Arsenkin. All rights reserved.
+//  Created by Igor Arsenkin on 15.11.15.
+//  Copyright © 2015 Apportable. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 @interface ARRScoreModel : NSObject
+@property (nonatomic, readonly) NSInteger highScore;
+@property (nonatomic, readonly) NSInteger maxCurrentScore;
+@property (nonatomic, assign)   NSInteger currentScore;
+
++ (instancetype)sharedScoreModel;
+
+- (void)resetMaxCurrentScore;
+- (void)save;
 
 @end
