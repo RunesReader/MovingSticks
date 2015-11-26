@@ -8,7 +8,7 @@
 
 #import "ARRContentModel.h"
 
-static NSString * const kARROpeningText     = @"Enfold firmly yours phone";
+static NSString * const kARROpeningText     = @"Hold firmly your phone";
 static NSString * const kARRAchievmentText  = @"Your MAX achievment was:";
 static NSString * const kARRSpinsText       = @"spins";
 static NSString * const kARRImageName       = @"iPhone";

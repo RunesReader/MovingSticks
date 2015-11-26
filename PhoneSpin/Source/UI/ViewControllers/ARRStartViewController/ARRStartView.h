@@ -18,6 +18,7 @@
 @property (nonatomic, weak) IBOutlet UILabel                    *nameOfAchievment;
 @property (nonatomic, weak) IBOutlet UIImageView                *contentImageView;
 @property (nonatomic, weak) IBOutletCollection(UIView) NSArray  *contentsSubviews;
+@property (nonatomic, weak) IBOutlet UILabel                    *countDownText;
 
 @property (nonatomic, strong)   ARRContentModel                 *contentModel;
 
