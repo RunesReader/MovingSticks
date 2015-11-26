@@ -64,6 +64,12 @@
                 <outlet property="nameOfAchievment" destination="rCx-vE-nQe" id="Y5e-3c-cxU"/>
                 <outlet property="openingText" destination="7qt-9g-Weo" id="TuR-If-0CP"/>
                 <outlet property="spinsText" destination="u3I-qn-j3P" id="G2d-Jt-PZv"/>
+                <outletCollection property="contentsSubviews" destination="7qt-9g-Weo" id="Cfb-0A-Etd"/>
+                <outletCollection property="contentsSubviews" destination="lGo-pM-y98" id="6fE-Ej-4BH"/>
+                <outletCollection property="contentsSubviews" destination="Yhx-rp-Fnf" id="wBy-0L-fS6"/>
+                <outletCollection property="contentsSubviews" destination="Ho6-mO-uhB" id="Us5-Gs-enQ"/>
+                <outletCollection property="contentsSubviews" destination="u3I-qn-j3P" id="Ntv-fU-0bi"/>
+                <outletCollection property="contentsSubviews" destination="rCx-vE-nQe" id="g1w-03-Tiu"/>
             </connections>
             <point key="canvasLocation" x="299" y="348"/>
         </view>

@@ -8,10 +8,10 @@
 
 #import "ARRContentModel.h"
 
-static NSString * const kARROpeningText = @"Enfold firmly yours phone";
-static NSString * const kARRAchievmentText = @"Your MAX achievment was:";
-static NSString * const kARRSpinsText = @"spins";
-static NSString * const kARRImageName = @"iPhone";
+static NSString * const kARROpeningText     = @"Enfold firmly yours phone";
+static NSString * const kARRAchievmentText  = @"Your MAX achievment was:";
+static NSString * const kARRSpinsText       = @"spins";
+static NSString * const kARRImageName       = @"iPhone";
 
 @implementation ARRContentModel
 
