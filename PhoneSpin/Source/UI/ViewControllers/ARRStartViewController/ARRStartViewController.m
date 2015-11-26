@@ -16,6 +16,9 @@ ARRViewControllerMainViewProperty(ARRStartViewController, mainView, ARRStartView
 
 @implementation ARRStartViewController
 
+#pragma mark -
+#pragma mark ARRStartViewController Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 }

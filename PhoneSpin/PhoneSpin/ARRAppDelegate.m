@@ -19,8 +19,7 @@
     UIWindow *window = [UIWindow window];
     self.window = window;
     
-    ARRStartViewController *startController = [ARRStartViewController controller];
-    window.rootViewController = startController;
+    window.rootViewController = [ARRStartViewController controller];
     [window makeKeyAndVisible];
     
     return YES;
