@@ -8,17 +8,17 @@
 
 #import "ARRScene.h"
 
-static NSString * const kARRStickName               = @"bambooStick_";
-static NSString * const kARRFrameName               = @"bambooFrame_";
+static NSString * const kARRStickName               = @"bambooStick";
+static NSString * const kARRFrameName               = @"bambooFrame";
 static const CCTime     kARRMoveDurationBambooStick = 2.0;
 static const CCTime     kARRInterestingFactor       = 0.1;
 
-static const NSInteger  kARRWinFactorLevel_1        = 2;
-static const NSInteger  kARRWinFactorLevel_2        = 10;
-static const NSInteger  kARRWinFactorLevel_3        = 100;
+static const NSInteger  kARRWinFactorLevel1         = 2;
+static const NSInteger  kARRWinFactorLevel2         = 10;
+static const NSInteger  kARRWinFactorLevel3         = 100;
 
-static NSString * const kARRLevel_2Name             = @"Level_2";
-static NSString * const kARRLevel_3Name             = @"Level_3";
+static NSString * const kARRLevel2Name              = @"Level2";
+static NSString * const kARRLevel3Name              = @"Level3";
 static NSString * const kARRStartSceneName          = @"StartScene";
 
 @interface ARRScene ()
@@ -165,13 +165,13 @@ static NSString * const kARRStartSceneName          = @"StartScene";
 - (NSInteger)winFactorWithSticksAmount:(NSUInteger)amount {
     switch (amount) {
         case kARRFirstLevel:
-            return kARRWinFactorLevel_1;
+            return kARRWinFactorLevel1;
             
         case kARRSecondLevel:
-            return kARRWinFactorLevel_2;
+            return kARRWinFactorLevel2;
             
         case kARRThirdLevel:
-            return kARRWinFactorLevel_3;
+            return kARRWinFactorLevel3;
             
         default:
             return 0;
@@ -181,10 +181,10 @@ static NSString * const kARRStartSceneName          = @"StartScene";
 - (NSString *)nextLevelNameWithSticksAmount:(NSUInteger)amount {
     switch (amount) {
         case kARRFirstLevel:
-            return kARRLevel_2Name;
+            return kARRLevel2Name;
             
         case kARRSecondLevel:
-            return kARRLevel_3Name;
+            return kARRLevel3Name;
             
         case kARRThirdLevel:
             return kARRStartSceneName;

@@ -14,7 +14,7 @@
 #import "ARRScoreModel.h"
 #import "ARRSceneManager.h"
 
-static NSString * const     kARRLevel_1_Name            = @"Level_1";
+static NSString * const     kARRLevel1_Name            = @"Level1";
 static const NSTimeInterval kARRTransitionFadeInterval  = 2.0;
 
 @interface ARRStartScene ()
@@ -57,7 +57,7 @@ static const NSTimeInterval kARRTransitionFadeInterval  = 2.0;
 #pragma mark Actions
 
 - (void)startButtonPressed:(CCButton *)sender {
-    [ARRSceneManager presentScene:kARRLevel_1_Name withFading:kARRTransitionFadeInterval];
+    [ARRSceneManager presentScene:kARRLevel1_Name withFading:kARRTransitionFadeInterval];
 }
 
 @end

@@ -161,7 +161,7 @@
 						<key>type</key>
 						<string>StringSimple</string>
 						<key>value</key>
-						<string>bambooFrame_1</string>
+						<string>bambooFrame1</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -223,7 +223,7 @@
 						<key>type</key>
 						<string>StringSimple</string>
 						<key>value</key>
-						<string>bambooFrame_2</string>
+						<string>bambooFrame2</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -285,7 +285,7 @@
 						<key>type</key>
 						<string>StringSimple</string>
 						<key>value</key>
-						<string>bambooFrame_3</string>
+						<string>bambooFrame3</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -323,6 +323,8 @@
 						<string>Prefabs/Bamboo_frame.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -347,7 +349,7 @@
 						<key>type</key>
 						<string>StringSimple</string>
 						<key>value</key>
-						<string>bambooStick_1</string>
+						<string>bambooStick1</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -409,7 +411,7 @@
 						<key>type</key>
 						<string>StringSimple</string>
 						<key>value</key>
-						<string>bambooStick_2</string>
+						<string>bambooStick2</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -471,7 +473,7 @@
 						<key>type</key>
 						<string>StringSimple</string>
 						<key>value</key>
-						<string>bambooStick_3</string>
+						<string>bambooStick3</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -678,8 +680,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
