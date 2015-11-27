@@ -13,10 +13,10 @@
 
 @interface ARRStartView : ARRView
 @property (nonatomic, weak)     IBOutlet UILabel                    *openingText;
-@property (nonatomic, weak)     IBOutlet UILabel                    *achievmentText;
-@property (nonatomic, weak)     IBOutlet UILabel                    *maxAchievment;
+@property (nonatomic, weak)     IBOutlet UILabel                    *achievementText;
+@property (nonatomic, weak)     IBOutlet UILabel                    *maxachievement;
 @property (nonatomic, weak)     IBOutlet UILabel                    *spinsText;
-@property (nonatomic, weak)     IBOutlet UILabel                    *nameOfAchievment;
+@property (nonatomic, weak)     IBOutlet UILabel                    *nameOfachievement;
 @property (nonatomic, weak)     IBOutlet UIImageView                *contentImageView;
 @property (nonatomic, strong)   IBOutletCollection(UIView) NSArray  *contentsSubviews;
 @property (nonatomic, weak)     IBOutlet UILabel                    *countDownText;
@@ -25,5 +25,6 @@
 @property (nonatomic, strong)   ARRScoreModel                       *scoreModel;
 
 - (void)fillWithContentModel:(ARRContentModel *)model;
+- (void)fillWithScoreModel:(ARRScoreModel *)model;
 
 @end

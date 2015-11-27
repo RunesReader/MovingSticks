@@ -10,7 +10,7 @@
 
 @interface ARRContentModel : NSObject
 @property (nonatomic, readonly) NSString    *openingText;
-@property (nonatomic, readonly) NSString    *achievmentText;
+@property (nonatomic, readonly) NSString    *achievementText;
 @property (nonatomic, readonly) NSString    *spinsText;
 @property (nonatomic, readonly) UIImage     *image;
 

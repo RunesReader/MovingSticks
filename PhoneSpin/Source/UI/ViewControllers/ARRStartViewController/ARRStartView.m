@@ -9,6 +9,7 @@
 #import "ARRStartView.h"
 
 #import "ARRContentModel.h"
+#import "ARRScoreModel.h"
 
 @interface ARRStartView ()
 @property (nonatomic, assign, getter=areSubviewsVisible)    BOOL    subviewsVisible;
@@ -62,10 +63,15 @@
 
 - (void)fillWithContentModel:(ARRContentModel *)model {
     self.openingText.text = model.openingText;
-    self.achievmentText.text = model.achievmentText;
+    self.achievementText.text = model.achievementText;
     self.spinsText.text = model.spinsText;
     self.contentImageView.image = model.image;
 }
+
+
+
+#pragma mark -
+#pragma mark Event Handling
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.subviewsVisible = NO;

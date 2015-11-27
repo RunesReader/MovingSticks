@@ -10,6 +10,19 @@
 
 static NSString * const kARRKeyForHighScore = @"highScore";
 
+static NSString * const kARRLevelZeroName   = @"UNMOVABLE";
+static NSString * const kARRLevelOneName    = @"DOG'S TAIL";
+static NSString * const kARRLevelTwoName    = @"MILL";
+static NSString * const kARRLevelThreeName  = @"FAN";
+static NSString * const kARRLevelFourName   = @"CENTRIFUGE";
+static NSString * const kARRLevelFiveName   = @"LARGE HADRON COLLIDER";
+
+static const NSInteger  kARRLevelOne        = 1;
+static const NSInteger  kARRLevelTwo        = 5;
+static const NSInteger  kARRLevelThree      = 10;
+static const NSInteger  kARRLevelFour       = 15;
+static const NSInteger  kARRLevelFive       = 20;
+
 @interface ARRScoreModel ()
 @property (nonatomic, assign) NSInteger highScore;
 @property (nonatomic, assign) NSInteger maxCurrentScore;
@@ -69,6 +82,22 @@ static NSString * const kARRKeyForHighScore = @"highScore";
 
 - (void)save {
     [[NSUserDefaults standardUserDefaults] setInteger:self.highScore forKey:kARRKeyForHighScore];
+}
+
+- (NSString *)achievementNameWithScore:(NSInteger)score {
+    if (score < kARRLevelOne) {
+        return kARRLevelZeroName;
+    } else if (score < kARRLevelTwo) {
+        return kARRLevelOneName;
+    } else if (score < kARRLevelThree) {
+        return kARRLevelTwoName;
+    } else if (score < kARRLevelFour) {
+        return kARRLevelThreeName;
+    } else if (score < kARRLevelFive) {
+        return kARRLevelFourName;
+    }
+    
+    return kARRLevelFiveName;
 }
 
 @end

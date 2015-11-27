@@ -23,8 +23,8 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your MAX achievment was:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhx-rp-Fnf">
-                    <rect key="frame" x="178" y="335" width="244" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your MAX achievement was:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yhx-rp-Fnf">
+                    <rect key="frame" x="173" y="335" width="254.5" height="24"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,7 +59,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDT-bY-r8J">
-                    <rect key="frame" x="211" y="121.5" width="178" height="358.5"/>
+                    <rect key="frame" x="211" y="121" width="178" height="358.5"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="300"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,19 +90,19 @@
                 <constraint firstItem="Ho6-mO-uhB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="z2b-ej-Hjk"/>
             </constraints>
             <connections>
-                <outlet property="achievmentText" destination="Yhx-rp-Fnf" id="3jM-Wa-NUa"/>
+                <outlet property="achievementText" destination="Yhx-rp-Fnf" id="sIx-CN-IKX"/>
                 <outlet property="contentImageView" destination="qmF-XR-oTd" id="QQl-z7-1eq"/>
                 <outlet property="countDownText" destination="EDT-bY-r8J" id="xkt-vJ-al0"/>
-                <outlet property="maxAchievment" destination="Ho6-mO-uhB" id="bhs-Up-xO6"/>
-                <outlet property="nameOfAchievment" destination="rCx-vE-nQe" id="Y5e-3c-cxU"/>
+                <outlet property="maxachievement" destination="Ho6-mO-uhB" id="bhs-Up-xO6"/>
+                <outlet property="nameOfachievement" destination="rCx-vE-nQe" id="Y5e-3c-cxU"/>
                 <outlet property="openingText" destination="7qt-9g-Weo" id="TuR-If-0CP"/>
                 <outlet property="spinsText" destination="u3I-qn-j3P" id="G2d-Jt-PZv"/>
                 <outletCollection property="contentsSubviews" destination="7qt-9g-Weo" id="Cfb-0A-Etd"/>
-                <outletCollection property="contentsSubviews" destination="Yhx-rp-Fnf" id="wBy-0L-fS6"/>
                 <outletCollection property="contentsSubviews" destination="Ho6-mO-uhB" id="Us5-Gs-enQ"/>
                 <outletCollection property="contentsSubviews" destination="u3I-qn-j3P" id="Ntv-fU-0bi"/>
                 <outletCollection property="contentsSubviews" destination="rCx-vE-nQe" id="g1w-03-Tiu"/>
                 <outletCollection property="contentsSubviews" destination="qmF-XR-oTd" id="26s-Lb-V1r"/>
+                <outletCollection property="contentsSubviews" destination="Yhx-rp-Fnf" id="BcP-lS-F4o"/>
             </connections>
             <point key="canvasLocation" x="299" y="348"/>
         </view>

@@ -17,5 +17,6 @@
 
 - (void)resetMaxCurrentScore;
 - (void)save;
+- (NSString *)achievementNameWithScore:(NSInteger)score;
 
 @end

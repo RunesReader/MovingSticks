@@ -9,7 +9,7 @@
 #import "ARRContentModel.h"
 
 static NSString * const kARROpeningText     = @"Hold firmly your phone";
-static NSString * const kARRAchievmentText  = @"Your MAX achievment was:";
+static NSString * const kARRachievementText  = @"Your MAX achievement was:";
 static NSString * const kARRSpinsText       = @"spins";
 static NSString * const kARRImageName       = @"iPhone";
 
@@ -22,8 +22,8 @@ static NSString * const kARRImageName       = @"iPhone";
     return kARROpeningText;
 }
 
-- (NSString *)achievmentText {
-    return kARRAchievmentText;
+- (NSString *)achievementText {
+    return kARRachievementText;
 }
 
 - (NSString *)spinsText {
