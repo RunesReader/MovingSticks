@@ -21,8 +21,12 @@ static NSString * const kARRLevel2Name              = @"Level2";
 static NSString * const kARRLevel3Name              = @"Level3";
 static NSString * const kARRStartSceneName          = @"StartScene";
 
+static NSString * const kARRPlistName               = @"LevelsMetadata";
+static NSString * const kARRPlistType               = @"plist";
+
 @interface ARRScene ()
-@property (nonatomic, assign) NSUInteger sticksCount;
+@property (nonatomic, assign) NSUInteger    sticksCount;
+@property (nonatomic, strong) NSDictionary  *levelsMetadata;
 
 @end
 
@@ -32,6 +36,9 @@ static NSString * const kARRStartSceneName          = @"StartScene";
 #pragma mark CCBReader Method
 
 - (void)didLoadFromCCB {
+    NSString *path = [[NSBundle mainBundle] pathForResource:kARRPlistName ofType:kARRPlistType];
+    self.levelsMetadata = [NSDictionary dictionaryWithContentsOfFile:path];
+    
     [self addAllNodesToItsArrays];
     NSUInteger sticksCount = self.sticksCount;
     
@@ -163,35 +170,15 @@ static NSString * const kARRStartSceneName          = @"StartScene";
 }
 
 - (NSInteger)winFactorWithSticksAmount:(NSUInteger)amount {
-    switch (amount) {
-        case kARRFirstLevel:
-            return kARRWinFactorLevel1;
-            
-        case kARRSecondLevel:
-            return kARRWinFactorLevel2;
-            
-        case kARRThirdLevel:
-            return kARRWinFactorLevel3;
-            
-        default:
-            return 0;
-    }
+    NSArray *levelMetadata = [self.levelsMetadata objectForKey:[NSString stringWithFormat:@"%lu", (unsigned long)amount]];
+    
+    return [[levelMetadata objectAtIndex:0] integerValue];
 }
 
 - (NSString *)nextLevelNameWithSticksAmount:(NSUInteger)amount {
-    switch (amount) {
-        case kARRFirstLevel:
-            return kARRLevel2Name;
-            
-        case kARRSecondLevel:
-            return kARRLevel3Name;
-            
-        case kARRThirdLevel:
-            return kARRStartSceneName;
-            
-        default:
-            return nil;
-    }
+    NSArray *levelMetadata = [self.levelsMetadata objectForKey:[NSString stringWithFormat:@"%lu", (unsigned long)amount]];
+    
+    return [levelMetadata objectAtIndex:1];
 }
 
 @end
