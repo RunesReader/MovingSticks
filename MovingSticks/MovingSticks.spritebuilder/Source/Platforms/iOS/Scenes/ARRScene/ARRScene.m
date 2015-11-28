@@ -83,32 +83,6 @@ static const CCTime     kARRInterestingFactor       = 0.1;
     self.scoreLabel.string = [NSString stringWithFormat:@"%li", (long)model.currentScore];
 }
 
-- (void)setupLevelWithWinFactor:(NSInteger)factor nextLevelName:(NSString *)name {
-    self.userInteractionEnabled = YES;
-    
-    ARRSetGameParameters *parameters = [[ARRSetGameParameters alloc] initWithWinPoints:factor];
-    parameters.nextLevelSceneName = name;
-    
-    ARRContext *context = [ARRContext new];
-    context.gameParameters = parameters;
-    self.context = context;
-    
-    if (kARRThirdLevel == self.sticksCount) {
-        [context.gameParameters setLastLevelPoints];
-    }
-
-}
-
-- (void)addAllNodesToItsArrays {
-    self.sticks = [NSPointerArray weakObjectsPointerArray];
-    self.frames = [NSPointerArray weakObjectsPointerArray];
-    
-    [self addToArray:self.sticks nodesWithName:kARRStickName];
-    [self addToArray:self.frames nodesWithName:kARRFrameName];
-    
-    self.sticksCount = self.sticks.count;
-}
-
 #pragma mark -
 #pragma mark User Interactions
 
@@ -134,6 +108,32 @@ static const CCTime     kARRInterestingFactor       = 0.1;
     NSString *levelName = [levelMetadata objectAtIndex:1];
     
     [self setupLevelWithWinFactor:factor nextLevelName:levelName];
+}
+
+- (void)setupLevelWithWinFactor:(NSInteger)factor nextLevelName:(NSString *)name {
+    self.userInteractionEnabled = YES;
+    
+    ARRSetGameParameters *parameters = [[ARRSetGameParameters alloc] initWithWinPoints:factor];
+    parameters.nextLevelSceneName = name;
+    
+    ARRContext *context = [ARRContext new];
+    context.gameParameters = parameters;
+    self.context = context;
+    
+    if (kARRThirdLevel == self.sticksCount) {
+        [context.gameParameters setLastLevelPoints];
+    }
+    
+}
+
+- (void)addAllNodesToItsArrays {
+    self.sticks = [NSPointerArray weakObjectsPointerArray];
+    self.frames = [NSPointerArray weakObjectsPointerArray];
+    
+    [self addToArray:self.sticks nodesWithName:kARRStickName];
+    [self addToArray:self.frames nodesWithName:kARRFrameName];
+    
+    self.sticksCount = self.sticks.count;
 }
 
 - (CGPoint)endStickPosition:(CCNode *)stick relativlyFrame:(CCNode *)frame {
