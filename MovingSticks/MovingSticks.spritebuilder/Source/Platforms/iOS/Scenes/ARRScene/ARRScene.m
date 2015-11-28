@@ -10,19 +10,11 @@
 
 static NSString * const kARRStickName               = @"bambooStick";
 static NSString * const kARRFrameName               = @"bambooFrame";
-static const CCTime     kARRMoveDurationBambooStick = 2.0;
-static const CCTime     kARRInterestingFactor       = 0.1;
-
-static const NSInteger  kARRWinFactorLevel1         = 2;
-static const NSInteger  kARRWinFactorLevel2         = 10;
-static const NSInteger  kARRWinFactorLevel3         = 100;
-
-static NSString * const kARRLevel2Name              = @"Level2";
-static NSString * const kARRLevel3Name              = @"Level3";
-static NSString * const kARRStartSceneName          = @"StartScene";
-
 static NSString * const kARRPlistName               = @"LevelsMetadata";
 static NSString * const kARRPlistType               = @"plist";
+
+static const CCTime     kARRMoveDurationBambooStick = 2.0;
+static const CCTime     kARRInterestingFactor       = 0.1;
 
 @interface ARRScene ()
 @property (nonatomic, assign) NSUInteger    sticksCount;
@@ -40,13 +32,7 @@ static NSString * const kARRPlistType               = @"plist";
     self.levelsMetadata = [NSDictionary dictionaryWithContentsOfFile:path];
     
     [self addAllNodesToItsArrays];
-    NSUInteger sticksCount = self.sticksCount;
-    
-    NSInteger factor = [self winFactorWithSticksAmount:sticksCount];
-    NSString *levelName = [self nextLevelNameWithSticksAmount:sticksCount];
-    
-    [self setupLevelWithWinFactor:factor nextLevelName:levelName];
-    
+    [self setupLevel];
     [self startMoveSticks];
 }
 
@@ -141,6 +127,15 @@ static NSString * const kARRPlistType               = @"plist";
 #pragma mark -
 #pragma mark Private
 
+- (void)setupLevel {
+    NSArray *levelMetadata = [self.levelsMetadata objectForKey:[NSString stringWithFormat:@"%d", self.sticksCount]];
+    
+    NSInteger factor = [[levelMetadata objectAtIndex:0] integerValue];
+    NSString *levelName = [levelMetadata objectAtIndex:1];
+    
+    [self setupLevelWithWinFactor:factor nextLevelName:levelName];
+}
+
 - (CGPoint)endStickPosition:(CCNode *)stick relativlyFrame:(CCNode *)frame {
     return CGPointMake(2 * frame.position.x - stick.position.x, stick.position.y);
 }
@@ -150,7 +145,7 @@ static NSString * const kARRPlistType               = @"plist";
     NSInteger index = 1;
     
     do {
-        NSString *fullName = [NSString stringWithFormat:@"%@%ld", name, (long)index];
+        NSString *fullName = [NSString stringWithFormat:@"%@%d", name, index];
         node = [self getChildByName:fullName recursively:NO];
         if (node) {
             [array addPointer:(__bridge void * _Nullable)(node)];
@@ -167,18 +162,6 @@ static NSString * const kARRPlistType               = @"plist";
          relativlyFrame:[self.frames pointerAtIndex:i]
                duration:kARRMoveDurationBambooStick - i * kARRInterestingFactor];
     }
-}
-
-- (NSInteger)winFactorWithSticksAmount:(NSUInteger)amount {
-    NSArray *levelMetadata = [self.levelsMetadata objectForKey:[NSString stringWithFormat:@"%lu", (unsigned long)amount]];
-    
-    return [[levelMetadata objectAtIndex:0] integerValue];
-}
-
-- (NSString *)nextLevelNameWithSticksAmount:(NSUInteger)amount {
-    NSArray *levelMetadata = [self.levelsMetadata objectForKey:[NSString stringWithFormat:@"%lu", (unsigned long)amount]];
-    
-    return [levelMetadata objectAtIndex:1];
 }
 
 @end
