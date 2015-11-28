@@ -11,7 +11,9 @@
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		78013A801BF61A2F00793DD0 /* ARRStartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 78013A7F1BF61A2F00793DD0 /* ARRStartScene.m */; };
 		78097CA91C0905E900848BE3 /* LevelsMetadata.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78097CA81C0905E900848BE3 /* LevelsMetadata.plist */; };
-		78985FAB1BFD2A26009EC2A8 /* ARRSetGameParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 78985FAA1BFD2A26009EC2A8 /* ARRSetGameParameters.m */; };
+		78097CB01C09FD0C00848BE3 /* ARRSetGameParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 78097CAE1C09FD0C00848BE3 /* ARRSetGameParameters.m */; };
+		78097CB91C0A039C00848BE3 /* ARRStick.m in Sources */ = {isa = PBXBuildFile; fileRef = 78097CB81C0A039C00848BE3 /* ARRStick.m */; };
+		78097CBD1C0A057500848BE3 /* ARRFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 78097CBC1C0A057500848BE3 /* ARRFrame.m */; };
 		78AF8B011BF87AA400AB500C /* ARRScoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AF8B001BF87AA400AB500C /* ARRScoreModel.m */; };
 		78F738381BF8D7DC007B0462 /* ARRScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F738371BF8D7DC007B0462 /* ARRScene.m */; };
 		78F7383D1BF8DAB2007B0462 /* ARRContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F7383C1BF8DAB2007B0462 /* ARRContext.m */; };
@@ -167,8 +169,12 @@
 		78013A7E1BF61A2F00793DD0 /* ARRStartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRStartScene.h; sourceTree = "<group>"; };
 		78013A7F1BF61A2F00793DD0 /* ARRStartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRStartScene.m; sourceTree = "<group>"; };
 		78097CA81C0905E900848BE3 /* LevelsMetadata.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LevelsMetadata.plist; path = Source/Platforms/iOS/LevelsMetadata.plist; sourceTree = SOURCE_ROOT; };
-		78985FA91BFD2A26009EC2A8 /* ARRSetGameParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRSetGameParameters.h; sourceTree = "<group>"; };
-		78985FAA1BFD2A26009EC2A8 /* ARRSetGameParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRSetGameParameters.m; sourceTree = "<group>"; };
+		78097CAE1C09FD0C00848BE3 /* ARRSetGameParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRSetGameParameters.m; sourceTree = "<group>"; };
+		78097CAF1C09FD0C00848BE3 /* ARRSetGameParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRSetGameParameters.h; sourceTree = "<group>"; };
+		78097CB71C0A039C00848BE3 /* ARRStick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRStick.h; sourceTree = "<group>"; };
+		78097CB81C0A039C00848BE3 /* ARRStick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRStick.m; sourceTree = "<group>"; };
+		78097CBB1C0A057500848BE3 /* ARRFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRFrame.h; sourceTree = "<group>"; };
+		78097CBC1C0A057500848BE3 /* ARRFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRFrame.m; sourceTree = "<group>"; };
 		78AF8AFF1BF87AA400AB500C /* ARRScoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRScoreModel.h; sourceTree = "<group>"; };
 		78AF8B001BF87AA400AB500C /* ARRScoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARRScoreModel.m; sourceTree = "<group>"; };
 		78F738361BF8D7DC007B0462 /* ARRScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRScene.h; sourceTree = "<group>"; };
@@ -364,6 +370,33 @@
 			path = Source/Platforms/iOS/Models;
 			sourceTree = "<group>";
 		};
+		78097CAC1C09FC5400848BE3 /* ARRStick */ = {
+			isa = PBXGroup;
+			children = (
+				78097CB71C0A039C00848BE3 /* ARRStick.h */,
+				78097CB81C0A039C00848BE3 /* ARRStick.m */,
+			);
+			path = ARRStick;
+			sourceTree = "<group>";
+		};
+		78097CAD1C09FCDD00848BE3 /* ARRSetGameParameters */ = {
+			isa = PBXGroup;
+			children = (
+				78097CAF1C09FD0C00848BE3 /* ARRSetGameParameters.h */,
+				78097CAE1C09FD0C00848BE3 /* ARRSetGameParameters.m */,
+			);
+			path = ARRSetGameParameters;
+			sourceTree = "<group>";
+		};
+		78097CBA1C0A054C00848BE3 /* ARRFrame */ = {
+			isa = PBXGroup;
+			children = (
+				78097CBB1C0A057500848BE3 /* ARRFrame.h */,
+				78097CBC1C0A057500848BE3 /* ARRFrame.m */,
+			);
+			path = ARRFrame;
+			sourceTree = "<group>";
+		};
 		783D01E81BF8A8A4008FCA36 /* Contexts */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,8 +409,9 @@
 		78985FA81BFD2982009EC2A8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				78985FA91BFD2A26009EC2A8 /* ARRSetGameParameters.h */,
-				78985FAA1BFD2A26009EC2A8 /* ARRSetGameParameters.m */,
+				78097CAD1C09FCDD00848BE3 /* ARRSetGameParameters */,
+				78097CAC1C09FC5400848BE3 /* ARRStick */,
+				78097CBA1C0A054C00848BE3 /* ARRFrame */,
 			);
 			name = Classes;
 			path = Source/Platforms/iOS/Classes;
@@ -931,6 +965,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78097CB91C0A039C00848BE3 /* ARRStick.m in Sources */,
+				78097CBD1C0A057500848BE3 /* ARRFrame.m in Sources */,
 				78F738381BF8D7DC007B0462 /* ARRScene.m in Sources */,
 				78F7384F1BF93D3F007B0462 /* ARRGameOverScene.m in Sources */,
 				78F7383D1BF8DAB2007B0462 /* ARRContext.m in Sources */,
@@ -938,7 +974,7 @@
 				78AF8B011BF87AA400AB500C /* ARRScoreModel.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				78F7384B1BF8F655007B0462 /* ARRSceneManager.m in Sources */,
-				78985FAB1BFD2A26009EC2A8 /* ARRSetGameParameters.m in Sources */,
+				78097CB01C09FD0C00848BE3 /* ARRSetGameParameters.m in Sources */,
 				78013A801BF61A2F00793DD0 /* ARRStartScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
