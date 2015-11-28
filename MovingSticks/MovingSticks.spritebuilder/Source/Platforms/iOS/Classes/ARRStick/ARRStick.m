@@ -11,7 +11,7 @@
 @implementation ARRStick
 
 - (void)didLoadFromCCB {
-    NSLog(@"ARRStick class loaded!");
+    
 }
 
 @end

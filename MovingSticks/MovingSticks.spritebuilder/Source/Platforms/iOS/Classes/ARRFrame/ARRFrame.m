@@ -11,7 +11,7 @@
 @implementation ARRFrame
 
 - (void)didLoadFromCCB {
-    NSLog(@"ARRFrame class loaded!");
+    
 }
 
 @end
