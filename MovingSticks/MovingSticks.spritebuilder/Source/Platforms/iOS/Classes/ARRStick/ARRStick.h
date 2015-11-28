@@ -10,4 +10,6 @@
 
 @interface ARRStick : CCSprite
 
+- (void)moveStickRelativlyFrame:(CCNode *)frame duration:(CCTime)duration;
+
 @end

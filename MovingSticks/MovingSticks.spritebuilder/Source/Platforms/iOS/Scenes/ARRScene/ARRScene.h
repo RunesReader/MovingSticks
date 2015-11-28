@@ -11,6 +11,8 @@
 #import "ARRScoreModel.h"
 #import "ARRContext.h"
 
+@class ARRStick;
+
 typedef NS_ENUM(NSUInteger, ARRGameLevel) {
     kARRFirstLevel = 1,
     kARRSecondLevel,
@@ -24,7 +26,6 @@ typedef NS_ENUM(NSUInteger, ARRGameLevel) {
 @property (nonatomic, strong)   NSPointerArray  *frames;
 
 - (BOOL)nodesIntersects;
-- (void)moveStick:(CCNode *)node relativlyFrame:(CCNode *)anotherNode duration:(CCTime)duration;
 - (void)fillWithModel:(ARRScoreModel *)model;
 
 @end

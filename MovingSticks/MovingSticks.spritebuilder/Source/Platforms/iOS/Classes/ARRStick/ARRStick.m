@@ -10,8 +10,29 @@
 
 @implementation ARRStick
 
-- (void)didLoadFromCCB {
+#pragma mark -
+#pragma mark Public
+
+- (void)moveStickRelativlyFrame:(CCNode *)frame duration:(CCTime)duration {
+    CGPoint endPosition = [self endStickPositionRelativlyFrame:frame];
     
+    id forwardMove = [CCActionMoveTo actionWithDuration:duration
+                                               position:endPosition];
+    id reverseMove = [CCActionMoveTo actionWithDuration:duration
+                                               position:self.position];
+    id sequence = [CCActionSequence actionWithArray:@[forwardMove, reverseMove]];
+    id forever = [CCActionRepeatForever actionWithAction:sequence];
+    
+    [self runAction:forever];
+}
+
+#pragma mark -
+#pragma mark Private
+
+- (CGPoint)endStickPositionRelativlyFrame:(CCNode *)frame {
+    CGPoint position = self.position;
+    
+    return CGPointMake(2 * frame.position.x - position.x, position.y);
 }
 
 @end

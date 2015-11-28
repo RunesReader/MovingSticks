@@ -8,6 +8,9 @@
 
 #import "ARRScene.h"
 
+#import "ARRStick.h"
+#import "ARRFrame.h"
+
 static NSString * const kARRStickName               = @"bambooStick";
 static NSString * const kARRFrameName               = @"bambooFrame";
 static NSString * const kARRPlistName               = @"LevelsMetadata";
@@ -33,7 +36,7 @@ static const CCTime     kARRInterestingFactor       = 0.1;
     
     [self addAllNodesToItsArrays];
     [self setupLevel];
-    [self startMoveSticks];
+    [self moveSticks];
 }
 
 #pragma mark -
@@ -54,8 +57,8 @@ static const CCTime     kARRInterestingFactor       = 0.1;
     BOOL result = NO;
     
     for (NSUInteger i = 0; i < self.sticksCount; i++) {
-        CCNode *stick = [self.sticks pointerAtIndex:i];
-        CCNode *frame = [self.frames pointerAtIndex:i];
+        ARRStick *stick = [self.sticks pointerAtIndex:i];
+        ARRFrame *frame = [self.frames pointerAtIndex:i];
         
         result = CGRectIntersectsRect(stick.boundingBox, frame.boundingBox);
         if (!result) {
@@ -66,21 +69,8 @@ static const CCTime     kARRInterestingFactor       = 0.1;
     return YES;
 }
 
-- (void)moveStick:(CCNode *)stick relativlyFrame:(CCNode *)frame duration:(CCTime)duration {
-    CGPoint endPosition = [self endStickPosition:stick relativlyFrame:frame];
-    
-    id forwardMove = [CCActionMoveTo actionWithDuration:duration
-                                               position:endPosition];
-    id reverseMove = [CCActionMoveTo actionWithDuration:duration
-                                               position:stick.position];
-    id sequence = [CCActionSequence actionWithArray:@[forwardMove, reverseMove]];
-    id forever = [CCActionRepeatForever actionWithAction:sequence];
-    
-    [stick runAction:forever];
-}
-
 - (void)fillWithModel:(ARRScoreModel *)model {
-    self.scoreLabel.string = [NSString stringWithFormat:@"%li", (long)model.currentScore];
+    self.scoreLabel.string = [NSString stringWithFormat:@"%d", model.currentScore];
 }
 
 #pragma mark -
@@ -105,9 +95,9 @@ static const CCTime     kARRInterestingFactor       = 0.1;
     NSArray *levelMetadata = [self.levelsMetadata objectForKey:[NSString stringWithFormat:@"%d", self.sticksCount]];
     
     NSInteger factor = [[levelMetadata objectAtIndex:0] integerValue];
-    NSString *levelName = [levelMetadata objectAtIndex:1];
+    NSString *nextLevelName = [levelMetadata objectAtIndex:1];
     
-    [self setupLevelWithWinFactor:factor nextLevelName:levelName];
+    [self setupLevelWithWinFactor:factor nextLevelName:nextLevelName];
 }
 
 - (void)setupLevelWithWinFactor:(NSInteger)factor nextLevelName:(NSString *)name {
@@ -136,10 +126,6 @@ static const CCTime     kARRInterestingFactor       = 0.1;
     self.sticksCount = self.sticks.count;
 }
 
-- (CGPoint)endStickPosition:(CCNode *)stick relativlyFrame:(CCNode *)frame {
-    return CGPointMake(2 * frame.position.x - stick.position.x, stick.position.y);
-}
-
 - (void)addToArray:(NSPointerArray *)array nodesWithName:(NSString *)name {
     CCNode *node = nil;
     NSInteger index = 1;
@@ -156,11 +142,12 @@ static const CCTime     kARRInterestingFactor       = 0.1;
     } while (node);
 }
 
-- (void)startMoveSticks {
-    for (NSUInteger i = 0; i < self.sticksCount; i++) {
-        [self moveStick:[self.sticks pointerAtIndex:i]
-         relativlyFrame:[self.frames pointerAtIndex:i]
-               duration:kARRMoveDurationBambooStick - i * kARRInterestingFactor];
+- (void)moveSticks {
+    NSUInteger count = self.sticksCount;
+    for (NSUInteger i = 0; i < count; i++) {
+        ARRStick *stick = [self.sticks pointerAtIndex:i];
+        ARRFrame *frame = [self.frames pointerAtIndex:i];
+        [stick moveStickRelativlyFrame:frame duration:kARRMoveDurationBambooStick - i * kARRInterestingFactor];
     }
 }
 
