@@ -11,7 +11,7 @@
 #import "ARRScoreModel.h"
 #import "ARRSceneManager.h"
 
-static NSString * const     kARRStartSceneName            = @"StartScene";
+static NSString * const     kARRStartSceneName          = @"StartScene";
 static const NSTimeInterval kARRTransitionFadeInterval  = 1.0;
 
 @interface ARRGameOverScene ()
@@ -43,7 +43,7 @@ static const NSTimeInterval kARRTransitionFadeInterval  = 1.0;
 #pragma mark Private
 
 - (void)fillWithModel:(ARRScoreModel *)model {
-    self.currentScoreLabel.string = [NSString stringWithFormat:@"%li", (long)model.maxCurrentScore];
+    self.currentScoreLabel.string = [NSString stringWithFormat:@"%d", model.maxCurrentScore];
 }
 
 #pragma mark -

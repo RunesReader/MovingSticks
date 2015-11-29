@@ -11,8 +11,6 @@
 #import "ARRScoreModel.h"
 #import "ARRContext.h"
 
-@class ARRStick;
-
 typedef NS_ENUM(NSUInteger, ARRGameLevel) {
     kARRFirstLevel = 1,
     kARRSecondLevel,

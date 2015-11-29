@@ -10,8 +10,4 @@
 
 @implementation ARRFrame
 
-- (void)didLoadFromCCB {
-    
-}
-
 @end
