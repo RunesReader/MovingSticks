@@ -24,9 +24,6 @@ typedef NS_ENUM(NSUInteger, ARRGameLevel) {
 @property (nonatomic, strong)   NSPointerArray  *frames;
 
 - (BOOL)nodesIntersects;
-- (void)moveStick:(CCNode *)node relativlyFrame:(CCNode *)anotherNode duration:(CCTime)duration;
 - (void)fillWithModel:(ARRScoreModel *)model;
-- (void)setupLevelWithWinFactor:(NSInteger)factor nextLevelName:(NSString *)name;
-- (void)addAllNodesToItsArrays;
 
 @end

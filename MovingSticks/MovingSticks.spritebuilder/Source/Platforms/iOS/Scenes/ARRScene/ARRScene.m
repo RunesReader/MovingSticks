@@ -8,21 +8,20 @@
 
 #import "ARRScene.h"
 
-static NSString * const kARRStickName               = @"bambooStick_";
-static NSString * const kARRFrameName               = @"bambooFrame_";
+#import "ARRStick.h"
+#import "ARRFrame.h"
+
+static NSString * const kARRStickName               = @"bambooStick";
+static NSString * const kARRFrameName               = @"bambooFrame";
+static NSString * const kARRPlistName               = @"LevelsMetadata";
+static NSString * const kARRPlistType               = @"plist";
+
 static const CCTime     kARRMoveDurationBambooStick = 2.0;
 static const CCTime     kARRInterestingFactor       = 0.1;
 
-static const NSInteger  kARRWinFactorLevel_1        = 2;
-static const NSInteger  kARRWinFactorLevel_2        = 10;
-static const NSInteger  kARRWinFactorLevel_3        = 100;
-
-static NSString * const kARRLevel_2Name             = @"Level_2";
-static NSString * const kARRLevel_3Name             = @"Level_3";
-static NSString * const kARRStartSceneName          = @"StartScene";
-
 @interface ARRScene ()
-@property (nonatomic, assign) NSUInteger sticksCount;
+@property (nonatomic, assign) NSUInteger    sticksCount;
+@property (nonatomic, strong) NSDictionary  *levelsMetadata;
 
 @end
 
@@ -32,15 +31,12 @@ static NSString * const kARRStartSceneName          = @"StartScene";
 #pragma mark CCBReader Method
 
 - (void)didLoadFromCCB {
+    NSString *path = [[NSBundle mainBundle] pathForResource:kARRPlistName ofType:kARRPlistType];
+    self.levelsMetadata = [NSDictionary dictionaryWithContentsOfFile:path];
+    
     [self addAllNodesToItsArrays];
-    NSUInteger sticksCount = self.sticksCount;
-    
-    NSInteger factor = [self winFactorWithSticksAmount:sticksCount];
-    NSString *levelName = [self nextLevelNameWithSticksAmount:sticksCount];
-    
-    [self setupLevelWithWinFactor:factor nextLevelName:levelName];
-    
-    [self startMoveSticks];
+    [self setupLevel];
+    [self moveSticks];
 }
 
 #pragma mark -
@@ -61,8 +57,8 @@ static NSString * const kARRStartSceneName          = @"StartScene";
     BOOL result = NO;
     
     for (NSUInteger i = 0; i < self.sticksCount; i++) {
-        CCNode *stick = [self.sticks pointerAtIndex:i];
-        CCNode *frame = [self.frames pointerAtIndex:i];
+        ARRStick *stick = [self.sticks pointerAtIndex:i];
+        ARRFrame *frame = [self.frames pointerAtIndex:i];
         
         result = CGRectIntersectsRect(stick.boundingBox, frame.boundingBox);
         if (!result) {
@@ -73,47 +69,8 @@ static NSString * const kARRStartSceneName          = @"StartScene";
     return YES;
 }
 
-- (void)moveStick:(CCNode *)stick relativlyFrame:(CCNode *)frame duration:(CCTime)duration {
-    CGPoint endPosition = [self endStickPosition:stick relativlyFrame:frame];
-    
-    id forwardMove = [CCActionMoveTo actionWithDuration:duration
-                                               position:endPosition];
-    id reverseMove = [CCActionMoveTo actionWithDuration:duration
-                                               position:stick.position];
-    id sequence = [CCActionSequence actionWithArray:@[forwardMove, reverseMove]];
-    id forever = [CCActionRepeatForever actionWithAction:sequence];
-    
-    [stick runAction:forever];
-}
-
 - (void)fillWithModel:(ARRScoreModel *)model {
-    self.scoreLabel.string = [NSString stringWithFormat:@"%li", (long)model.currentScore];
-}
-
-- (void)setupLevelWithWinFactor:(NSInteger)factor nextLevelName:(NSString *)name {
-    self.userInteractionEnabled = YES;
-    
-    ARRSetGameParameters *parameters = [[ARRSetGameParameters alloc] initWithWinPoints:factor];
-    parameters.nextLevelSceneName = name;
-    
-    ARRContext *context = [ARRContext new];
-    context.gameParameters = parameters;
-    self.context = context;
-    
-    if (kARRThirdLevel == self.sticksCount) {
-        [context.gameParameters setLastLevelPoints];
-    }
-
-}
-
-- (void)addAllNodesToItsArrays {
-    self.sticks = [NSPointerArray weakObjectsPointerArray];
-    self.frames = [NSPointerArray weakObjectsPointerArray];
-    
-    [self addToArray:self.sticks nodesWithName:kARRStickName];
-    [self addToArray:self.frames nodesWithName:kARRFrameName];
-    
-    self.sticksCount = self.sticks.count;
+    self.scoreLabel.string = [NSString stringWithFormat:@"%d", model.currentScore];
 }
 
 #pragma mark -
@@ -134,8 +91,39 @@ static NSString * const kARRStartSceneName          = @"StartScene";
 #pragma mark -
 #pragma mark Private
 
-- (CGPoint)endStickPosition:(CCNode *)stick relativlyFrame:(CCNode *)frame {
-    return CGPointMake(2 * frame.position.x - stick.position.x, stick.position.y);
+- (void)setupLevel {
+    NSArray *levelMetadata = [self.levelsMetadata objectForKey:[NSString stringWithFormat:@"%d", self.sticksCount]];
+    
+    NSInteger factor = [[levelMetadata objectAtIndex:0] integerValue];
+    NSString *nextLevelName = [levelMetadata objectAtIndex:1];
+    
+    [self setupLevelWithWinFactor:factor nextLevelName:nextLevelName];
+}
+
+- (void)setupLevelWithWinFactor:(NSInteger)factor nextLevelName:(NSString *)name {
+    self.userInteractionEnabled = YES;
+    
+    ARRSetGameParameters *parameters = [[ARRSetGameParameters alloc] initWithWinPoints:factor];
+    parameters.nextLevelSceneName = name;
+    
+    ARRContext *context = [ARRContext new];
+    context.gameParameters = parameters;
+    self.context = context;
+    
+    if (kARRThirdLevel == self.sticksCount) {
+        [context.gameParameters setLastLevelPoints];
+    }
+    
+}
+
+- (void)addAllNodesToItsArrays {
+    self.sticks = [NSPointerArray weakObjectsPointerArray];
+    self.frames = [NSPointerArray weakObjectsPointerArray];
+    
+    [self addToArray:self.sticks nodesWithName:kARRStickName];
+    [self addToArray:self.frames nodesWithName:kARRFrameName];
+    
+    self.sticksCount = self.sticks.count;
 }
 
 - (void)addToArray:(NSPointerArray *)array nodesWithName:(NSString *)name {
@@ -143,7 +131,7 @@ static NSString * const kARRStartSceneName          = @"StartScene";
     NSInteger index = 1;
     
     do {
-        NSString *fullName = [NSString stringWithFormat:@"%@%ld", name, (long)index];
+        NSString *fullName = [NSString stringWithFormat:@"%@%d", name, index];
         node = [self getChildByName:fullName recursively:NO];
         if (node) {
             [array addPointer:(__bridge void * _Nullable)(node)];
@@ -154,43 +142,12 @@ static NSString * const kARRStartSceneName          = @"StartScene";
     } while (node);
 }
 
-- (void)startMoveSticks {
-    for (NSUInteger i = 0; i < self.sticksCount; i++) {
-        [self moveStick:[self.sticks pointerAtIndex:i]
-         relativlyFrame:[self.frames pointerAtIndex:i]
-               duration:kARRMoveDurationBambooStick - i * kARRInterestingFactor];
-    }
-}
-
-- (NSInteger)winFactorWithSticksAmount:(NSUInteger)amount {
-    switch (amount) {
-        case kARRFirstLevel:
-            return kARRWinFactorLevel_1;
-            
-        case kARRSecondLevel:
-            return kARRWinFactorLevel_2;
-            
-        case kARRThirdLevel:
-            return kARRWinFactorLevel_3;
-            
-        default:
-            return 0;
-    }
-}
-
-- (NSString *)nextLevelNameWithSticksAmount:(NSUInteger)amount {
-    switch (amount) {
-        case kARRFirstLevel:
-            return kARRLevel_2Name;
-            
-        case kARRSecondLevel:
-            return kARRLevel_3Name;
-            
-        case kARRThirdLevel:
-            return kARRStartSceneName;
-            
-        default:
-            return nil;
+- (void)moveSticks {
+    NSUInteger count = self.sticksCount;
+    for (NSUInteger i = 0; i < count; i++) {
+        ARRStick *stick = [self.sticks pointerAtIndex:i];
+        ARRFrame *frame = [self.frames pointerAtIndex:i];
+        [stick moveStickRelativlyFrame:frame duration:kARRMoveDurationBambooStick - i * kARRInterestingFactor];
     }
 }
 
