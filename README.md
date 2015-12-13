@@ -1,6 +1,8 @@
 #MovingSticks
-
 This is a simple game.  
+
+## Setup
+Before building, please, install SpriteBuilder.
 
 Start Screen | Level 1 | Level 2 | Level 3 | Game Over
 -------------|---------|---------|---------|----------
